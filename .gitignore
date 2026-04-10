@@ -1,0 +1,5 @@
+**.config/mozilla/
+**.config/nohup.out
+**.config/gtk-3.0/
+**.config/Raspberry Pi/
+**.config/xfce4/
