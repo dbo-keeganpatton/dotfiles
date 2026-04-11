@@ -8,10 +8,13 @@ let
   };
 
 
-  # Latest Neovim Overlay for 0.12 support
+
+
+ # Latest Neovim Overlay for 0.12 support
   neovim-nightly-overlay = import (builtins.fetchTarball {
     url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
   });
+
 
   # This block is to support a pop up window for my active keybinds
   # as a helper tool using SUPER+i 
@@ -149,6 +152,7 @@ in
 
       starship                      # Command Line Prompt Customizer
       python3                       # Python Runtime
+      cmatrix			    # Turbo Nerd Flex Tool
       zathura                       # Terminal Based PDF Utility
       gnumake                       # Build Automation for MAKE
       ripgrep                       # System Search Tool
@@ -280,12 +284,12 @@ in
 	# Nix Specific
 	nixpkgs.config.allowUnfree            = true;
 
-  # Neovim Nightly Conig
-  nixpkgs.overlays                      = [ neovim-nightly-overlay ];
-  programs.neovim = {
-    enable                              = true;
-    package                             = pkgs.neovim;
-  };
+	 # Neovim Nightly Conig
+	  nixpkgs.overlays                      = [ neovim-nightly-overlay ];
+	  programs.neovim = {
+	    enable                              = true;
+	    package                             = pkgs.neovim;
+	  };
 
 
 	system.stateVersion                   = "25.11";
