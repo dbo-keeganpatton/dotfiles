@@ -144,22 +144,26 @@ require("nvim-tree").setup({
 -- C.3  Colorscheme
 ---------------------------
 require("flow").setup({
-  opts = {
-    theme = {
-      contrast = "high",
-      transparent = true,
-    },
-    colors = {
-      fluo = "green",
-      custom = {saturation = "60"},
-    },
-    ui = {
-      borders = "fluo",
-      aggressive_spell = false,
-    }
+  theme = {
+    contrast = "high",
+    transparent = true,
+  },
+  colors = {
+    fluo = "green",
+    custom = {saturation = "60"},
+  },
+  ui = {
+    borders = "fluo",
+    aggressive_spell = false,
   }
 })
 vim.cmd("colorscheme flow")
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })       
+vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" }) 
+vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })   
+vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none" })   
 
 
 -- C.4  NeoScroll 
