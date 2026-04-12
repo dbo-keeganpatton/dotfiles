@@ -19,7 +19,7 @@ window#waybar {
 #workspaces {
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid #D100D1;
-    border-radius: 9px;
+    border-radius: 0px;
     padding: 0 10px;
     margin-top: 4px;
     margin-left: 4px;
