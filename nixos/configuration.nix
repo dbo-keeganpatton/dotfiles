@@ -11,9 +11,9 @@ let
 
 
  # Latest Neovim Overlay for 0.12 support
-  neovim-nightly-overlay = import (builtins.fetchTarball {
-    url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
-  });
+#  neovim-nightly-overlay = import (builtins.fetchTarball {
+#   url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
+# });
 
 
   # This block is to support a pop up window for my active keybinds
@@ -51,13 +51,24 @@ in
     enable = true;
     enable32Bit = true; 
   };
-
+ 
+  # Nvidia configs
+  services.xserver.videoDrivers = ["nvidia" "modesetting"];
+  hardware.nvidia.open = true;
+  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.prime = {
+  	offload.enable = true;
+ 	intelBusId = "PCI:0@0:2:0";
+  	nvidiaBusId = "PCI:1@0:0:0";
+   };
+  
+ 
 	# Bootloader Configs
 	boot.loader.systemd-boot.enable                 = true;
 	boot.loader.efi.canTouchEfiVariables            = true;
 
 	# Networking (Use nmcli)
-	networking.hostName                             = "eyelady"; 
+	networking.hostName                             = "eyelady_core"; 
 	networking.networkmanager.enable                = true;
 	networking.firewall.enable                      = true;
 
@@ -142,6 +153,7 @@ in
       waypaper                      # Wallpaper Manager
       luarocks                      # Lua Package Manager
       rpi-imager                    # Raspberry Pi imager
+      pciutils 		            # PCI Utility
       
       #->> These packages are for linux-casefolding fix
       #->> to fix texture issues in Counter Strike Source
@@ -224,39 +236,6 @@ in
     pulse.enable = true;
     wireplumber = {
       enable = true;
-      extraConfig."10-fix-ryzen-audio" = {
-        "monitor.alsa.rules" = [
-          {
-            # Kill the HDMI card
-            matches = [ { "device.name" = "~alsa_card.pci-0000_03_00.1"; } ];
-            actions = { update-props = { "device.disabled" = true; }; };
-          }
-          {
-            # Configure the Hardware Profile
-            matches = [ { "device.name" = "~alsa_card.pci-0000_03_00.6"; } ];
-            actions = {
-              update-props = {
-                "api.alsa.use-acp" = true;
-                "device.profile-set" = "default.conf";
-                "device.profile" = "analog-stereo";
-                "api.acp.auto-profile" = false;
-                "api.acp.auto-port" = false;
-              };
-            };
-          }
-          {
-            # Configure the Output Volume/Mute
-            matches = [ { "node.name" = "~alsa_output.pci-0000_03_00.6.*"; } ];
-            actions = {
-              update-props = {
-                "node.description" = "Laptop Speakers";
-                "node.mute" = false;
-                "node.volume" = 0.6; 
-              };
-            };
-          }
-        ];
-      };
     };
   };
 
@@ -285,11 +264,11 @@ in
 	nixpkgs.config.allowUnfree            = true;
 
 	 # Neovim Nightly Conig
-	  nixpkgs.overlays                      = [ neovim-nightly-overlay ];
-	  programs.neovim = {
-	    enable                              = true;
-	    package                             = pkgs.neovim;
-	  };
+	# nixpkgs.overlays                      = [ neovim-nightly-overlay ];
+	# programs.neovim = {
+	  # enable                              = true;
+	  # package                             = pkgs.neovim;
+	# };
 
 
 	system.stateVersion                   = "25.11";
