@@ -2,21 +2,14 @@
 
 let
 
+  # Unstable branch for Nvim
+  unstable = import <nixos-unstable> {};
+
   # Custom SDDM login Screen with animated anime girl
   custom-astronaut = pkgs.sddm-astronaut.override {
     embeddedTheme = "hyprland_kath";
   };
 
-
-
-
- # Latest Neovim Overlay for 0.12 support
-#  neovim-nightly-overlay = import (builtins.fetchTarball {
-#   url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
-# });
-
-
-  # This block is to support a pop up window for my active keybinds
   # as a helper tool using SUPER+i 
   keybind-helper = pkgs.writeShellScriptBin "keybind-helper" ''
     CONFIG_PATH="$HOME/.config/hypr/hyprland.conf"
@@ -168,7 +161,7 @@ in
       zathura                       # Terminal Based PDF Utility
       gnumake                       # Build Automation for MAKE
       ripgrep                       # System Search Tool
-      neovim                        # Text Editor
+      unstable.neovim               # Text Editor
       heroku                        # Deployment and Hosting Service CLI
       kalker                        # System Calculator
       waybar                        # Desktop Navbar
@@ -262,15 +255,6 @@ in
 
 	# Nix Specific
 	nixpkgs.config.allowUnfree            = true;
-
-	 # Neovim Nightly Conig
-	# nixpkgs.overlays                      = [ neovim-nightly-overlay ];
-	# programs.neovim = {
-	  # enable                              = true;
-	  # package                             = pkgs.neovim;
-	# };
-
-
 	system.stateVersion                   = "25.11";
 
 }
