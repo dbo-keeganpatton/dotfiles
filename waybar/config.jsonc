@@ -18,7 +18,6 @@
     "modules-left": ["clock", "hyprland/workspaces"],
     "modules-center": [],
     "modules-right": [
-        "network",
         "memory",
         "cpu",
         "battery"
@@ -47,18 +46,6 @@
         "format": "{icon} {capacity}%",
         "format-icons": ["⌁"] 
     },
-    
-    "network": {
-      "interface": "wlp0s20f3",
-      "interval": 20,
-      "format": "{ipaddr}",
-      "format-wifi": "  ({bandwidthTotalBytes})",
-      "format-ethernet": "{ifname} ",
-      "format-disconnected": "!",
-      "max-length": 13,
-      "min-length": 14
-    },
-
     
     "hyprland/workspaces": {
         "format": "{icon}",
