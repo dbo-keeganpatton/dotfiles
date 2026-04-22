@@ -230,31 +230,7 @@ in
     wireplumber = { enable = true; };
   };
 
-
-  # This directory has to be manually made to save default
-  # for alsactl
-  systemd.tmpfiles.rules = ["d /var/lib/alsa 0755 root root -"];
-
-  # boot.extraModprobeConfig = ''
-  # options snd_hda_intel index=0 model=auto
-  # options snd_rn_pci_acp3x index=-2
-  # '';
-
-
  
-# This ensures ALSA settings are preserved across reboots
-# Helps with Alsa/Pipewire defaulting to read from HDMI
-# systemd.services.alsa-store = {
-# description = "Store ALSA Subsystem State";
-# wantedBy = [ "multi-user.target" ];
-# serviceConfig = {
-# Type = "oneshot";
-# RemainAfterExit = true;
-# ExecStart = "${pkgs.coreutils}/bin/true";
-# ExecStop = "${pkgs.alsa-utils}/sbin/alsactl store";
-# };
-# };
-
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
