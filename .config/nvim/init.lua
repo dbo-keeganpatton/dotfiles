@@ -137,7 +137,7 @@ vim.pack.add({
 -- C.2  Nvim-Tree
 ---------------------------
 require("nvim-tree").setup({
-  view = {relativenumber = true} 
+  view = {relativenumber = true, width = 40} 
 })
 
 
