@@ -156,6 +156,7 @@ in
     luarocks                      # Lua Package Manager
     rpi-imager                    # Raspberry Pi imager
     pciutils 		                  # PCI Utility
+    google-chrome
 
     #->> These packages are for linux-casefolding fix
     #->> to fix texture issues in Counter Strike Source
