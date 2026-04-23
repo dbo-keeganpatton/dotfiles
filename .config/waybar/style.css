@@ -48,16 +48,22 @@ window#waybar {
 }
 
 #battery {
+    padding-left: 20px;
+    padding-right: 20px;
     margin-right: 13;
     border: 1px solid #470047;
 }
 
 #cpu {
+    padding-left: 20px;
+    padding-right: 20px;
     border: 1px solid #470047;
 }
 
 
 #memory {
+    padding-left: 20px;
+    padding-right: 20px;
     border: 1px solid #470047;
 }
 

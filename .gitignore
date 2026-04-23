@@ -1,6 +1,29 @@
-**.config/mozilla/
-**.config/nohup.out
-**.config/gtk-3.0/
-**.config/Raspberry Pi/
-**.config/xfce4/
-**.config/google-chrome/
+# Ignore everything
+*
+!.gitignore
+!.config/
+
+##############
+# Block List #
+##############
+.config/*
+
+##############
+# Allow List #
+##############
+!.bashrc
+!nixos/
+!public/
+!README.md
+!.tmux.conf
+!.config/btop/
+!.config/foot/
+!.config/hypr/
+!.config/nvim/
+!.config/Thunar/
+!.config/waybar/
+!.config/waypaper/
+!.config/wofi/
+!.config/yazi/
+!.config/starship.toml
+
