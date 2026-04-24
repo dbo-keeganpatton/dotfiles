@@ -165,6 +165,7 @@ in
     parallel
     #->>
 
+    protontricks                  # Linux gaming utility
     starship                      # Command Line Prompt Customizer
     python3                       # Python Runtime
     cmatrix			                  # Turbo Nerd Flex Tool
