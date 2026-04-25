@@ -153,6 +153,7 @@ in
     hyprlock                      # Screen Locking
     hypridle                      # System Idle Daemon 
     waypaper                      # Wallpaper Manager
+    mpvpaper                      # Live Wallpaper Utility
     luarocks                      # Lua Package Manager
     rpi-imager                    # Raspberry Pi imager
     pciutils 		                  # PCI Utility
@@ -165,7 +166,19 @@ in
     parallel
     #->>
 
+    #->> Packages specifically for Cyberpunk 2077 mod support
     protontricks                  # Linux gaming utility
+    zenity                        # Linus gaming utility
+    freefont_ttf                  # Required by WINE (Protontricks)
+    liberation_ttf                # Required by WINE (Protontricks)
+    freetype
+    fontconfig
+    libpng
+    heroic
+    #->>
+
+
+  
     starship                      # Command Line Prompt Customizer
     python3                       # Python Runtime
     cmatrix			                  # Turbo Nerd Flex Tool
