@@ -26,4 +26,4 @@
 !.config/wofi/
 !.config/yazi/
 !.config/starship.toml
-
+!.config/alacritty/alacritty.toml

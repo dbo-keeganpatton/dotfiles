@@ -150,7 +150,7 @@ require("flow").setup({
   },
   colors = {
     fluo = "green",
-    custom = {saturation = "60"},
+    custom = {saturation = "90"},
   },
   ui = {
     borders = "fluo",
@@ -266,7 +266,7 @@ require("multicursor-nvim").setup({})
 require("render-markdown").setup({})
 require("lualine").setup({
   options = {
-    theme = "16color",
+    theme = "powerline",
     icons_enabled = false,
   },
   sections = {

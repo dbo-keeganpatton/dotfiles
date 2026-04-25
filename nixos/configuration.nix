@@ -199,7 +199,7 @@ in
     krita                         # Vector grapgic editor
     nmap                          # Network Application
     rofi                          # Wayland Window Switcher Utility
-    foot                          # Wayland Native Terminal Emulator
+    alacritty                     # GPU buffed terminal
     kitty                         # I shouldn't even have this shit here, literally just for pets.nvim
     wofi                          # Menu GUI
     btop-cuda                     # Btop Version for GPU monitoring
