@@ -6,21 +6,21 @@ window {
 
 #input {
   background-color: black;
-  border: solid 1px #D100D1;
+  border: solid 1px #00FF00;
   border-radius: 2px;
   color: white;
 }
 
 
 #input:focus {
-  border: 1px solid #D100D1; 
+  border: 1px solid #00FF00; 
   outline: none;             
   box-shadow: none;          
 }
 
 
 #text:selected {
-  color: #D100D1;
+  color: #00FF00;
 }
 
 
@@ -32,7 +32,7 @@ window {
 
 #entry:selected {
   background-color: black;
-  border: solid 1px #D100D1;
+  border: solid 1px #00FF00;
   border-radius: 2px;
   outline: none;
   opacity: 1.0;
