@@ -266,7 +266,7 @@ require("multicursor-nvim").setup({})
 require("render-markdown").setup({})
 require("lualine").setup({
   options = {
-    theme = "powerline",
+    theme = "powerline_dark",
     icons_enabled = false,
   },
   sections = {
