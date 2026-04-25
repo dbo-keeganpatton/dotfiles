@@ -15,12 +15,12 @@
 
 
     // Module Selection
-    "modules-left": ["clock", "hyprland/workspaces"],
-    "modules-center": [],
+    "modules-left": ["clock", "battery"],
+    "modules-center": ["hyprland/workspaces"],
     "modules-right": [
         "memory",
-        "cpu",
-        "battery"
+        "cpu"
+        
     ],
 
 
