@@ -46,6 +46,21 @@ in
     enable32Bit                                   = true; 
   };
 
+  programs.steam = {
+    enable = true;
+    protontricks.enable = true; 
+    extraPackages = with pkgs; [
+      wineWow64Packages.stable
+      winetricks
+      freetype
+      libjpeg
+      libpng
+      zenity
+      zlib
+      yad
+    ];
+  };
+
 
   # Nvidia configs
   services.xserver.videoDrivers                   = ["nvidia" "modesetting"];
@@ -192,6 +207,7 @@ in
     lua5_1                        # Lua Runtime
     nodejs                        # Node Package Manager
     steam                         # Video Games
+    steam-run                     # FHS steam hack
     slurp                         # Screenshot helper utility
     unzip                         # Extraction Utility
     rustc                         # Rust runtime

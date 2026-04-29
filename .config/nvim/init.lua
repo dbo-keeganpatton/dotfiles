@@ -85,7 +85,7 @@ keymap.set(
 -- C.1  Plugin Source
 ---------------------------
 vim.pack.add({
-  -->> Colorscheme
+  -->> Colorschemes
   {src = "https://github.com/0xstepit/flow.nvim"},
 
   -->> Netrw Directory Tree navigation

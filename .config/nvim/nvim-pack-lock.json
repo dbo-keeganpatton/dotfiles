@@ -52,6 +52,10 @@
       "rev": "de740991c12411b663994b2860f1a4fd0937c130",
       "src": "https://github.com/MunifTanjim/nui.nvim.git"
     },
+    "nvim": {
+      "rev": "762a37afe2e242144355fafe385d638ec347ec48",
+      "src": "https://codeberg.org/evergarden/nvim.git"
+    },
     "nvim-autopairs": {
       "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
       "src": "https://github.com/windwp/nvim-autopairs.git"
